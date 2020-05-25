@@ -1,0 +1,13 @@
+#!/usr/bin/env python
+
+from bf2marc.converter import Converter
+
+config = {
+    "sparql_select": "http://192.168.1.153:9999/bigdata/namespace/kb/sparql",
+    "sparql_update": "http://192.168.1.153:9999/bigdata/namespace/kb/sparql"
+}
+c = Converter(config)
+c.load(rdffile="test/rdf/t1.rdf")
+c.convert()
+c.unload()
+ 
